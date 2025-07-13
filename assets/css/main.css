@@ -12,29 +12,41 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Open Sans", sans-serif;
+  --heading-font: "Lora", serif;
+  --nav-font: "Lora", serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #e3e4e0; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+  --background-color: #e3e4e0;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #272829;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #050d18;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #149ddd;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #a8a9b4;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #040b14; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #a8a9b4; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #a8a9b4;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #040b14;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #040b14;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #a8a9b4;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #ffffff;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -777,6 +789,266 @@ section,
   border: 2px solid var(--accent-color);
 }
 
+
+/* Project Section Styling */
+.projects {
+  background-color: #e3e4e0;
+  padding: 80px 0;
+}
+
+.project-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Project Image Holder */
+.project-image-holder {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.project-image-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image-holder img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.preview-btn {
+  color: white;
+  font-size: 1.5rem;
+  background: var(--primary-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.preview-btn:hover {
+  background: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* Project Content */
+.project-content {
+  padding: 25px;
+}
+
+.project-header {
+  margin-bottom: 15px;
+}
+
+.project-header h3 {
+  font-family: var(--heading-font);
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.project-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.project-meta span {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.project-description {
+  color: #34495e;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.project-details {
+  margin: 20px 0;
+  background-color: transparent !important; 
+  padding: 0;
+}
+
+.project-details h4 {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.project-details ul {
+  padding-left: 20px;
+}
+
+.project-details li {
+  margin-bottom: 8px;
+  color: #34495e;
+  position: relative;
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.project-details li:before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* Project Footer */
+.project-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.github-link,
+.demo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.github-link {
+  background: #f1f5f9;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+.github-link:hover {
+  background: #e2e8f0;
+  text-decoration: none;
+}
+
+.demo-link {
+  background: var(--primary-color);
+  color: white;
+}
+
+.demo-link:hover {
+  background: var(--secondary-color);
+  text-decoration: none;
+  color: white;
+}
+
+.supervisor,
+.collaborator {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin-left: auto;
+}
+
+.collaborator a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.collaborator a:hover {
+  text-decoration: underline;
+}
+
+/* Fact */
+.timeline {
+  position: relative;
+  margin: 0;
+  padding-left: 25px;
+  border-left: 3px solid #149ddd;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -10px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  background: #149ddd;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #149ddd;
+}
+
+.timeline-content {
+  padding-left: 20px;
+}
+
+.timeline-date {
+  font-size: 0.95em;
+  color: #149ddd;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
@@ -1268,8 +1540,30 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# CV-Buttom
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+.cv-container {
+  margin-top: 100px;
+}
+
+button {
+  background-color: #5c625c;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 5px;
+
+  padding: 10px 20px;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #149ddd;
 }
